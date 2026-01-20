@@ -1,5 +1,5 @@
 /*		Gabriela Balanta
-testing testing testing	*/
+testing testing testing	testing*/
 
 #include<stdio.h>  ///allows use if scanf and printf
 int main()
