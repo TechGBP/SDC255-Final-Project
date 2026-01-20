@@ -1,0 +1,31 @@
+/*		Gabriela Balanta
+testing testing testing	*/
+
+#include<stdio.h>  ///allows use if scanf and printf
+int main()
+{
+ 
+	float bmi, height, weight;  ///allows the use of decimals    (height and weight were changed to real number isnted of intagers
+	
+	
+	printf("Please enter your height (in inches):");   ////prompts user to put in the height specifically in inches
+	scanf("%f", &height);   ///reads and store the number put in for height 
+	
+	
+	printf("Please enter your weight (in pounds):"); ///ask user for their weigh in lbs(pounds)
+	scanf("%f", &weight);   //reads and store the inupt for later use
+	
+	 
+	bmi = (weight*703) / (height*height);  ////calls up nuber of weight and the height to put into bmi formula
+
+		
+	printf("Your Body Mass Index is %.2f", bmi);   ///show the result of the BMI formula
+	
+	printf("\n\nBMI VALUES:\nUnderweight: 	less than 18.5");  ////shows the specifed text (\n is used to put text on a new line)
+	printf("\nNormal: 	between 18.5 and 24.9");
+	printf("\nOverweight: 	between 25 and 29.0");
+	printf("\nObese: 		30 or greater");
+	
+	
+	return 0; ///ends function
+}
