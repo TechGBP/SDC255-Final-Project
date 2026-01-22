@@ -7,9 +7,9 @@
 #include<math.h>  ///allows the round fucntion to work
 #include<ctype.h>  ///allows the for the use of write()
 #include<string.h>  //used for writing on file
-#include <stdlib.h> //used to clear the screen 
-#include <iostream> //is needed for the void and write function
-#include <fstream> ///used in addition with the iostream libary for the write file function 
+#include<stdlib.h> //used to clear the screen 
+#include<iostream> //is needed for the void and write function
+#include<fstream> ///used in addition with the iostream libary for the write file function 
 using namespace std; ///used for the write function
 
 void menu();
@@ -53,7 +53,6 @@ int main()
 			{
 			count=count-7;   ///changes the count number which then ends the while loop
 				
-				
 			}
 		else
 		{		
@@ -61,13 +60,17 @@ int main()
 			{
 			printf("You choose to write a file\n");	
 			 
-			 write();	
+			write();	
+				
 				
 			} 
 		else if(choice==2)  
 			{
 			printf("You choose to read the file\n"); ////user choose read the file 
-				
+			
+			read(); ////calls read function
+			
+			
 				
 			}
 		else if(choice==3) 
@@ -77,7 +80,7 @@ int main()
 			total = multiplication();
 			
 			printf("The total is %d", total);
-						
+					
 					
 			}
 		else if(choice==4)    ///user choose calculation 2 which is addition
@@ -104,39 +107,65 @@ int write()
 
 	int words; ///declares value for user text limit
 
+	fstream file; //writes data the file
 	
-	ofstream file; //writes data the file
+	file.open("newFile.txt",ios::out);   ///makes a new file in write mode called newfile.txt
 	
-	file.open("newFile.txt");   ///makes a new file in write mode called newfile.txt
-	
-	if (!file.is_open())
+	if (!file)
 	{
 		cout << "There was an erorr making the file!" << endl; //shows text that an erorr has occurred 
 		
 		return 1;  ///Returns a value of 1 to indicate an error has occurred 
 	}
-	cout << "The new file was made!" << endl;  /// Displays text that the file was made successfully 
+	else
+	{
+		cout << "The new file was made!" << endl;  /// Displays text that the file was made successfully 
 	
-	
-	
-	printf("Enter text to be added to the file: "); ////prompts the user to enter text for the file
-	scanf( "%d", &words);   ///reads user input
+		printf("Enter text to be added to the file: "); ////prompts the user to enter text for the file
+		scanf( "%d", &words);   ///reads user input
 	 
 	 
-	file << ("%d", words);
+		file << ("%d", words);	
+
+	}
 	
-	
+
 	file.close(); ////closes the new file
 	
 	return 0; //goes back to main
-	
 }
 
 
 
 int read()
 {
+	fstream file;  ////Specifies  file to read
 	
+	
+	file.open("newFile.txt",ios::in);
+	
+	string line;
+	
+	if (!file)
+	{
+		
+		cerr << "Erorr: Cannot open specified file!" << endl; ///show erorr if file can not be opened
+		
+		return 1;
+	}
+	else 
+	{
+		
+		while (getline(file,line))
+		{
+			cout << line << endl; ///reads the lines and stores them
+		}
+		
+	}
+	
+	file.close(); //closes the file
+	
+	return 0; //goes back to main
 	
 }
 
@@ -183,8 +212,13 @@ int addition()
 
 void menu()
 {
-	
-		system("CLS"); //clears the screen
+		/*
+		
+		system("CLS"); //clears the screen but it messus up out code too much
+			the if we left it activ in the main it clears the screen too fast for the user to read the text
+			if we put if after each fucntion is called the results do not show
+		
+		*/
 		
 		char prompt[]={"\nMain Menu\n"};   ///shows menu text
 		puts(prompt);  ///shows text and lets user know use of program
