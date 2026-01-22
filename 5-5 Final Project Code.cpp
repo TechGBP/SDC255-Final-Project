@@ -7,7 +7,7 @@
 #include<math.h>  ///allows the round fucntion to work
 #include<ctype.h>  ///allows the for the use of toupper()
 #include<string.h>
-#define MAX_SIZE 6   ///max size is set to six because the highest number can 10,000 when 100*100 
+#include <stdlib.h> //used to clear the screen 
 float percent(int tryinc, int trycor); ////prototype function for percentage
 int write();
 int read();
@@ -21,7 +21,7 @@ int main()
 	time_t current_time;
 	
 	
-	std::system("cls");  ///clears the screen 
+	system("CLS");  ///clears the screen 
 	
 	char prompt[]={"Main Menu\n"}; 
 	char* c_time_string;
@@ -118,16 +118,16 @@ int read() ///for the read file function
 
 
 
-int multiplication()
+float multiplication()
 {
 	
 		float answer, num, num2, correct; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf_s("%d", &num,MAX_SIZE);    ///limits the user imput
+		scanf_s("%d", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf_s("%d", &num2,MAX_SIZE);  
+		scanf_s("%d", &num2);  
 		
 		printf("%f + %f = ? ", num, num2);
 		
@@ -138,15 +138,15 @@ int multiplication()
 }
 
 
-int addition()
+float addition()
 {
 	float answer, num, num2, sum; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf_s("%d", &num,MAX_SIZE);    ///limits the user imput
+		scanf_s("%d", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf_s("%d", &num2,MAX_SIZE);  
+		scanf_s("%d", &num2);  
 		
 		printf("%f + %f = ? ", num, num2);
 		
