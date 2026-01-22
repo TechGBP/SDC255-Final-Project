@@ -40,10 +40,10 @@ int main()
 	
 	while(count>2)   ///used to loop until user wants to exit
 	{
-	printf("Enter 	option 1\n");   ///prompts user to enter any number between 1-5 that corelates with the choice they want
-	printf("	option 2\n");
-	printf("	option 3");
-	printf("	option 4\n");
+	printf("Enter 	W to Write\n");   ///prompts user to enter any number between 1-5 that corelates with the choice they want
+	printf("	R to Read\n");
+	printf("	M to Multiply\n");
+	printf("	A to Add\n");
 	printf("	E to exit\n");
 	
 	///put new fuction here
@@ -152,12 +152,12 @@ char selection()    ///used for user selection
 			if(choice2=='A' || choice2=='a'|| choice2=='S' || choice2=='s' || choice2 =='M' || choice2=='m' || choice2=='D'|| choice2=='d' || choice2=='E' || choice2=='e' )
 			{
 				
-						if(choice2=='A' || choice2=='a')
+						if(choice2=='W' || choice2=='w')
 						{
 						num=1;
 						count=5;
 						}
-						else if(choice2=='S' || choice2=='s')
+						else if(choice2=='R' || choice2=='r')
 						{
 						num=2;
 						count=5;
@@ -167,7 +167,7 @@ char selection()    ///used for user selection
 						num=3;
 						count=5;
 						}
-						else if(choice2=='D'|| choice2=='d')
+						else if(choice2=='A'|| choice2=='a')
 						{
 						num=4;
 						count=5;
