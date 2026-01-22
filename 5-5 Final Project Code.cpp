@@ -11,13 +11,13 @@
 float percent(int tryinc, int trycor); ////prototype function for percentage
 int write();
 int read();
-float multiplication();
-float addition();
+int multiplication();
+int addition();
 char selection(); ///prototype finction for user choice
 int main()
 {
-	int choice, count, num, num2, answer, trycor, tryinc, correct;   ////declares the variables for count(used to exit while loop) and choice
-	float total, percents;  ////declares real number variable
+	int choice, count, num, num2, answer, trycor, tryinc, correct, total;   ////declares the variables for count(used to exit while loop) and choice
+	float percents;  ////declares real number variable
 	time_t current_time;
 	
 	
@@ -79,7 +79,7 @@ int main()
 			
 			total = multiplication();
 			
-			printf("The total is %.2f", total);
+			printf("The total is %d", total);
 						
 					
 			}
@@ -88,7 +88,7 @@ int main()
 			printf("You choose Calculation 2 which is addition\n");	
 				
 				total = addition(); ///calls up function
-				printf("The sum is %0.2f\n", total);
+				printf("The sum is %d\n", total);
 				
 				
 			}
@@ -106,37 +106,37 @@ return 0; ///ends program
 
 
 
-float multiplication()
+int multiplication()
 {
 	
-		float answer, num, num2, correct; ///declares the variables   ans is the user input
+		int answer, num, num2, correct; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf("%f", &num);    ///limits the user imput
+		scanf("%d", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf("%f", &num2);  
+		scanf("%d", &num2);  
 		
-		printf("%0.2f + %0.2f = ? ", num, num2);
+		printf("%d * %d = ? ", num, num2);
 		
-		correct=num+num2; ///adds the numbers together to check against user input
+		correct=num*num2; ///adds the numbers together to check against user input
 			
 	
 	return correct;	
 }
 
 
-float addition()
+int addition()
 {
-	float answer, num, num2, sum; ///declares the variables   ans is the user input
+	int answer, num, num2, sum; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf("%f", &num);    ///limits the user imput
+		scanf("%d", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf("%f", &num2);  
+		scanf("%d", &num2);  
 		
-		printf("%0.2f + %0.2f = ? ", num, num2);
+		printf("%d + %d = ? ", num, num2);
 		
 		sum=num+num2; ///adds the numbers together to check against user input
 			
