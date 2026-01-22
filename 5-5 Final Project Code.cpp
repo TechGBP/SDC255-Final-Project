@@ -6,7 +6,7 @@
 #include<time.h>	///allows the usage of the time libary
 #include<math.h>  ///allows the round fucntion to work
 #include<ctype.h>  ///allows the for the use of write()
-#include<string.h>
+#include<string.h>  //used for writing on file
 #include <stdlib.h> //used to clear the screen 
 #include <iostream> //is needed for the void and write function
 #include <fstream> ///used in addition with the iostream libary for the write file function 
@@ -101,7 +101,9 @@ return 0; ///ends program
 
 int write()
 {
-	int words; 
+
+	int words; ///declares value for user text limit
+
 	
 	ofstream file; //writes data the file
 	
@@ -113,22 +115,21 @@ int write()
 		
 		return 1;  ///Returns a value of 1 to indicate an error has occurred 
 	}
-	
-
 	cout << "The new file was made!" << endl;  /// Displays text that the file was made successfully 
 	
 	
 	
 	printf("Enter text to be added to the file: "); ////prompts the user to enter text for the file
-	scanf("%d", &words);   ///reads user input
+	scanf( "%d", &words);   ///reads user input
 	 
-	file << ("%d", words) ;
+	 
+	file << ("%d", words);
 	
 	
 	file.close(); ////closes the new file
 	
-	
 	return 0; //goes back to main
+	
 }
 
 
