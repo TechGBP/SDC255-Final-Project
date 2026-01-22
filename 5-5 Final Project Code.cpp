@@ -21,9 +21,7 @@ int main()
 	time_t current_time;
 	
 	
-	system("CLS");  ///clears the screen 
-	
-	char prompt[]={"Main Menu\n"}; 
+
 	char* c_time_string;
 
 	
@@ -34,17 +32,23 @@ int main()
 	
 	
 	
-	puts(prompt);  ///shows text and lets user know use of program
+
 	printf("Current time is %s", c_time_string);    ///shows the currrent time 
 	
 	
 	while(count>2)   ///used to loop until user wants to exit
 	{
+		system("CLS");  ///clears the screen 
+		
+		char prompt[]={"Main Menu\n"};   ///shows menu text
+		puts(prompt);  ///shows text and lets user know use of program
+		
+		
 	printf("Enter 	W to Write\n");   ///prompts user to enter any number between 1-5 that corelates with the choice they want
 	printf("	R to Read\n");
 	printf("	M to Multiply\n");
 	printf("	A to Add\n");
-	printf("	E to exit\n");
+	printf("	E to Exit\n");
 	
 	///put new fuction here
 	choice = selection();
@@ -79,7 +83,7 @@ int main()
 			printf("You choose Calculation 2 which is addition\n");	
 				
 				total = addition(); ///calls up function
-				printf("The sum is %.2f", total);
+				printf("The sum is %0.2f\n", total);
 				
 			}
 			
@@ -107,7 +111,7 @@ float multiplication()
 		printf("Enter your second number: ");
 		scanf("%f", &num2);  
 		
-		printf("%f + %f = ? ", num, num2);
+		printf("%0.2f + %0.2f = ? ", num, num2);
 		
 		correct=num+num2; ///adds the numbers together to check against user input
 			
@@ -126,7 +130,7 @@ float addition()
 		printf("Enter your second number: ");
 		scanf("%d", &num2);  
 		
-		printf("%f + %f = ? ", num, num2);
+		printf("%0.2f + %0.2f = ? ", num, num2);
 		
 		sum=num+num2; ///adds the numbers together to check against user input
 			
