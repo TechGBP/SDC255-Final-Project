@@ -5,7 +5,7 @@
 #include<stdio.h>
 #include<time.h>	///allows the usage of the time libary
 #include<math.h>  ///allows the round fucntion to work
-#include<ctype.h>  ///allows the for the use of toupper()
+#include<ctype.h>  ///allows the for the use of write()
 #include<string.h>
 #include <stdlib.h> //used to clear the screen 
 #include <iostream> //is needed for the void and write function
@@ -44,7 +44,7 @@ int main()
 	while(count>2)   ///used to loop until user wants to exit
 	{
 	
-menu(); //calls menu function
+	menu(); //calls menu function
 	
 	///put new fuction here
 	choice = selection();
@@ -101,6 +101,8 @@ return 0; ///ends program
 
 int write()
 {
+	int words; 
+	
 	ofstream file; //writes data the file
 	
 	file.open("newFile.txt");   ///makes a new file in write mode called newfile.txt
@@ -112,7 +114,16 @@ int write()
 		return 1;  ///Returns a value of 1 to indicate an error has occurred 
 	}
 	
+
 	cout << "The new file was made!" << endl;  /// Displays text that the file was made successfully 
+	
+	
+	
+	printf("Enter text to be added to the file: "); ////prompts the user to enter text for the file
+	scanf("%d", &words);   ///reads user input
+	 
+	file << ("%d", words) ;
+	
 	
 	file.close(); ////closes the new file
 	
@@ -124,6 +135,7 @@ int write()
 
 int read()
 {
+	
 	
 }
 
