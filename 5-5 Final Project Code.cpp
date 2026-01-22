@@ -8,16 +8,20 @@
 #include<ctype.h>  ///allows the for the use of toupper()
 #include<string.h>
 #include <stdlib.h> //used to clear the screen 
-float percent(int tryinc, int trycor); ////prototype function for percentage
+#include <iostream> //is needed for the void and write function
+#include <fstream> ///used in addition with the iostream libary for the write file function 
+
+void menu();
 int write();
 int read();
 int multiplication();
 int addition();
 char selection(); ///prototype finction for user choice
+
+
 int main()
 {
-	int choice, count, num, num2, answer, trycor, tryinc, correct, total;   ////declares the variables for count(used to exit while loop) and choice
-	float percents;  ////declares real number variable
+	int choice, count, num, num2, answer, correct, total, intro;   ////declares the variables for count(used to exit while loop) and choice
 	time_t current_time;
 	
 	
@@ -39,16 +43,7 @@ int main()
 	while(count>2)   ///used to loop until user wants to exit
 	{
 	
-		
-		char prompt[]={"\nMain Menu\n"};   ///shows menu text
-		puts(prompt);  ///shows text and lets user know use of program
-		
-		
-	printf("Enter 	W to Write\n");   ///prompts user to enter any number between 1-5 that corelates with the choice they want
-	printf("	R to Read\n");
-	printf("	M to Multiply\n");
-	printf("	A to Add\n");
-	printf("	E to Exit\n");
+menu(); //calls menu function
 	
 	///put new fuction here
 	choice = selection();
@@ -104,8 +99,6 @@ return 0; ///ends program
 
 
 
-
-
 int multiplication()
 {
 	
@@ -145,6 +138,23 @@ int addition()
 }
 
 
+void menu()
+{
+	
+		system("CLS"); //clears the screen
+		
+		char prompt[]={"\nMain Menu\n"};   ///shows menu text
+		puts(prompt);  ///shows text and lets user know use of program
+		
+		
+	printf("Enter 	W to Write\n");   ///prompts user to enter any number between 1-5 that corelates with the choice they want
+	printf("	R to Read\n");
+	printf("	M to Multiply\n");
+	printf("	A to Add\n");
+	printf("	E to Exit\n");
+	
+	
+}
 
 
 char selection()    ///used for user selection
