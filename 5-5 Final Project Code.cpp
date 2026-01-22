@@ -38,9 +38,9 @@ int main()
 	
 	while(count>2)   ///used to loop until user wants to exit
 	{
-		system("CLS");  ///clears the screen 
+	
 		
-		char prompt[]={"Main Menu\n"};   ///shows menu text
+		char prompt[]={"\nMain Menu\n"};   ///shows menu text
 		puts(prompt);  ///shows text and lets user know use of program
 		
 		
@@ -56,6 +56,8 @@ int main()
 		if( choice ==5)
 			{
 			count=count-7;   ///changes the count number which then ends the while loop
+				system("CLS");  ///clears the screen 
+				
 			}
 		else
 		{		
@@ -63,11 +65,13 @@ int main()
 			{
 			printf("You choose to write a file\n");	
 				
+				
 			} 
 		else if(choice==2)  
 			{
 			printf("You choose to read the file\n"); ////user choose read the file 
-		
+				
+				
 			}
 		else if(choice==3) 
 			{
@@ -77,6 +81,7 @@ int main()
 			
 			printf("The total is %.2f", total);
 						
+					
 			}
 		else if(choice==4)    ///user choose calculation 2 which is addition
 			{
@@ -84,6 +89,7 @@ int main()
 				
 				total = addition(); ///calls up function
 				printf("The sum is %0.2f\n", total);
+				
 				
 			}
 			
@@ -125,10 +131,10 @@ float addition()
 	float answer, num, num2, sum; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf("%d", &num);    ///limits the user imput
+		scanf("%f", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf("%d", &num2);  
+		scanf("%f", &num2);  
 		
 		printf("%0.2f + %0.2f = ? ", num, num2);
 		
@@ -153,7 +159,7 @@ char selection()    ///used for user selection
 	{
 		scanf("%s", &choice2);      ///reads and stores user choice
 		
-			if(choice2=='A' || choice2=='a'|| choice2=='S' || choice2=='s' || choice2 =='M' || choice2=='m' || choice2=='D'|| choice2=='d' || choice2=='E' || choice2=='e' )
+			if(choice2=='A' || choice2=='a'|| choice2=='W' || choice2=='w' || choice2 =='M' || choice2=='m' || choice2=='R'|| choice2=='r' || choice2=='E' || choice2=='e' )
 			{
 				
 						if(choice2=='W' || choice2=='w')
