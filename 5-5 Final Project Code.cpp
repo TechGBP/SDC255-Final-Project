@@ -10,6 +10,7 @@
 #include <stdlib.h> //used to clear the screen 
 #include <iostream> //is needed for the void and write function
 #include <fstream> ///used in addition with the iostream libary for the write file function 
+using namespace std; ///used for the write function
 
 void menu();
 int write();
@@ -51,7 +52,7 @@ menu(); //calls menu function
 		if( choice ==5)
 			{
 			count=count-7;   ///changes the count number which then ends the while loop
-				system("CLS");  ///clears the screen 
+				
 				
 			}
 		else
@@ -59,7 +60,8 @@ menu(); //calls menu function
 		if(choice==1)   ////user choose the write file function
 			{
 			printf("You choose to write a file\n");	
-				
+			 
+			 write();	
 				
 			} 
 		else if(choice==2)  
@@ -96,6 +98,34 @@ menu(); //calls menu function
 return 0; ///ends program
 }
 
+
+int write()
+{
+	ofstream file; //writes data the file
+	
+	file.open("newFile.txt");   ///makes a new file in write mode called newfile.txt
+	
+	if (!file.is_open())
+	{
+		cout << "There was an erorr making the file!" << endl; //shows text that an erorr has occurred 
+		
+		return 1;  ///Returns a value of 1 to indicate an error has occurred 
+	}
+	
+	cout << "The new file was made!" << endl;  /// Displays text that the file was made successfully 
+	
+	file.close(); ////closes the new file
+	
+	
+	return 0; //goes back to main
+}
+
+
+
+int read()
+{
+	
+}
 
 
 
