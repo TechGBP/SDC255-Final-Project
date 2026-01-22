@@ -32,8 +32,6 @@ int main()
 	current_time = time(NULL);   ////gets current time
 	c_time_string = ctime(&current_time);  
 	
-	trycor=0; ///keeps trac of correct attemps 
-	tryinc=0; ///keeps tract of incorrect attempts
 	
 	
 	puts(prompt);  ///shows text and lets user know use of program
@@ -59,15 +57,13 @@ int main()
 		{		
 		if(choice==1)   ////user choose the write file function
 			{
-			printf("You choose write\n");	
-			int write(); //calls the write function	
+			printf("You choose to write a file\n");	
 				
 			} 
 		else if(choice==2)  
 			{
 			printf("You choose to read the file\n"); ////user choose read the file 
-			int write(); //calls the read function
-			
+		
 			}
 		else if(choice==3) 
 			{
@@ -97,24 +93,6 @@ return 0; ///ends program
 
 
 
-int read() ///for the read file function
-{
-	
-	
-	
-	
-	return ;
-}
-
-
-int read() ///for the read file function
-{
-	
-	
-	
-	
-	return ;
-}
 
 
 
@@ -124,10 +102,10 @@ float multiplication()
 		float answer, num, num2, correct; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf_s("%d", &num);    ///limits the user imput
+		scanf("%f", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf_s("%d", &num2);  
+		scanf("%f", &num2);  
 		
 		printf("%f + %f = ? ", num, num2);
 		
@@ -143,10 +121,10 @@ float addition()
 	float answer, num, num2, sum; ///declares the variables   ans is the user input
 		
 		printf("Enter your first number: ");
-		scanf_s("%d", &num);    ///limits the user imput
+		scanf("%d", &num);    ///limits the user imput
 		
 		printf("Enter your second number: ");
-		scanf_s("%d", &num2);  
+		scanf("%d", &num2);  
 		
 		printf("%f + %f = ? ", num, num2);
 		
@@ -169,7 +147,7 @@ char selection()    ///used for user selection
 
 	while(count<=2)
 	{
-		scanf_s("%s", &choice2, MAX_SIZE);      ///reads and stores user choice
+		scanf("%s", &choice2);      ///reads and stores user choice
 		
 			if(choice2=='A' || choice2=='a'|| choice2=='S' || choice2=='s' || choice2 =='M' || choice2=='m' || choice2=='D'|| choice2=='d' || choice2=='E' || choice2=='e' )
 			{
@@ -214,5 +192,4 @@ char selection()    ///used for user selection
 	
 	
 	
-	return 0; ///ends main
-}
+
